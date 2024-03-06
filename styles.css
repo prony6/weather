@@ -27,11 +27,6 @@ html {
   padding: 10px;
 }
 
-.appWrapperRight {
-  flex: 3;
-  padding: 10px;
-}
-
 .weatherTemperature {
   height: 150px;
 }
@@ -84,8 +79,8 @@ span.temperature,
 
 .humility > span,
 .speed > span {
-  color: gray;
-  font-size: 18px;
+    color: gray;
+    font-size: 18px;
 }
 
 .humility>p, .speed>p{
@@ -99,4 +94,9 @@ span.temperature,
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.appWrapperRight {
+  flex: 3;
+  padding: 10px;
 }
