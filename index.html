@@ -20,8 +20,63 @@
       type="text/javascript"
       src="https://unpkg.com/babel-standalone@6/babel.js"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Load react-chartjs2 and its dependencies -->
 
     <script type="text/babel">
+        /*<!-- import reactChartjs2 from "https://cdn.jsdelivr.net/npm/react-chartjs-2@5.2.0/+esm";
+      const { Line } = reactChartjs2;
+
+      const TemperatureChart = () => {
+        // Chart Data
+        const data = {
+          labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"],
+          datasets: [
+            {
+              label: "Temperature",
+              data: [25, 28, 24, 26, 30], // Example temperatures for each day
+              borderColor: "rgb(75, 192, 192)",
+              borderWidth: 2,
+              fill: false,
+            },
+          ],
+        };
+
+        // Chart Configurations
+        const options = {
+          responsive: true,
+          title: {
+            display: true,
+            text: "Weather Temperature Forecast",
+          },
+          scales: {
+            xAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Days",
+                },
+              },
+            ],
+            yAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Temperature (°C)",
+                },
+              },
+            ],
+          },
+        };
+        return (
+          <div className="temperatureChart">
+            <h2>Weather Temperature Chart</h2>
+            <Line data={data} options={options} />
+          </div>
+        );
+      }; */
+
       const Card = () => {
         return (
           <div className="card">
@@ -79,8 +134,13 @@
                 </div>
               </div>
               <div className="appWrapperRight">
-                <div className="weatherTemperature"></div>
+                <div className="weatherTemperature">
+
+                </div>
                 <div className="weatherForecasting">
+                  <Card />
+                  <Card />
+                  <Card />
                   <Card />
                 </div>
               </div>

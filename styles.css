@@ -107,8 +107,13 @@ span.temperature,
   background-color: whitesmoke;
 }
 
+.weatherForecasting{
+    display: flex;
+    justify-content: space-between;
+}
+
 .card {
-  width: 22%;
+  width: 20%;
   height: 165px;
   display: flex;
   flex-direction: column;
@@ -117,5 +122,4 @@ span.temperature,
   border: 1px solid gray;
   padding: 5px;
   border-radius: 8px;
-  box-shadow: 0px 0px 0px 3px #000000;
 }
