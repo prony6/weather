@@ -23,10 +23,50 @@
 
     <script type="text/babel">
       const App = () => {
+        const now = new Date();
+        const time = JSON.stringify(now);
+
         return (
           <div className="appWrapper">
-            <div className="appWrapperLeft"></div>
-            <div className="appWrapperLeft"></div>
+            <div className="appWrapperLeft">
+              <form action="">
+                <label htmlFor="city">City Name: </label>
+                <input type="text" />
+              </form>
+              <div className="date">
+                <span>Current Date: {time}</span>
+              </div>
+              <div className="weatherStatus">
+                <img
+                  height="60px"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAS0AAACnCAMAAABzYfrWAAAAgVBMVEX///8AAAD4+Piampqzs7P8/Pze3t7m5ubu7u75+fnz8/PJycnU1NTi4uJ3d3fv7++Tk5O7u7s7Ozs2Njarq6uQkJDFxcVHR0cfHx/Q0NBaWlqgoKB8fHwTExOZmZlNTU1tbW0sLCxiYmJAQEAcHBxoaGiGhoZUVFQODg4nJycwMDCVKvIoAAALlUlEQVR4nOVd6ULyOhC9li5sIoUCQllFK/j+D3hFEDqTSZtl0sXv/EQpSZrMnFnz33+tgxcNB3GSbmez2Xic+oPwuVv3kBoJb+hv36anJwHn1TaOgrqH1yQMt5/iMuXx/pE81z3IRsCL34pX6o793Kt7sPUiGOwVl+q2YIN/90xG2bvWWv2cye2/ucGGqicQYxTWPfTKMd8ZrtUFn8O6h18pwoXFWl2w/3d42IueaKeR9eqeRjVIGdbqgrjuiVSAro3Agtj/eTrhs63VBfO6p+MUvRLW8LoYJb4/H4ThchDHyexjUcLIRnXPyCG654KJT2eDSJTcvWjQ+Sj41uLPktWBfM6zQaGKW84msq+e/ihXTSTzPc9U/AvhTLYx/6Tw2tJzXS2VnzCXcNrU4ahrwoyc6EjPbRWOyKeMHY25NpCLZWC/RKRW3ToYcY0YE1NcmNnGw+NfX64OMUFzw4VSF3/oMMbi7FZ9i+d1V+IDfbbR1oxncW6J5SMJy/yP+LxehIlt7BnlUFyuF4ax1g+BJR1tTuEv+sJjpwxPrR2ChF8xPVgwH/dMD64Robs5CVS1uf5B7yUaxkmadjppmvrzsEsfr+DgcANkbRBdYZytCMfTZJXFgiGzRv/0wToSvFxch5wJ3jIr8RSvxsucAxifw0/m8eB4iC0zYUQ3UfSpv/m/BiBSXAf2QA0eUUPOYt/XCj+s/MsOwyQ+Yh+W9wp/oRGu59AgBLgO/9vAT1z47fBZrz9zKabMfgWg9752MjhkY3NLRl3EU7O1wjg7Cv8hljq4fOZ1w+EyjF6qjjjOmdbKndnbQy9lvcsLgMloNq8qaeKZL7LsTv4SDiGEKaA1rkC5PE3h8AUT7i4B5xm/QgYYFgVLddFxOVC1IexcxtIkIS1DuIspR4K5KMXU1Xq9lEmsyX6cJn48n/tJus1WZSmkE0cHIaKDZjIcnYS2lwW/+DpKh6LHwQvn40IO68Kf0tVbqwsyfnkvi8I/bT78wk0ynMmZbMY9yj72cKiB+7XRgeVvczlWED/RVnYqmR0q0ldaBt7XJkkBGiuTgIEkT2vK4ZG/YWlBmznzmMiim4NewO5lS1Q4fR9kLtYVmB3CX5zYjG+S6+kHNz2agfAsV/hltVjfYNKN1CEy0yO0EOZYrrK06PNiNVpn6/0nucGvYDFbicXaGVOlkFCQ79ayq19ABScfnTi/bYJh8iZZMoblIixDK183sQtso6TPG/GZt6VKSXHkzWkeaM2XRXP+YPnMZ9HY3Fk9UJq9mhVI7h51dm0dbqJ5yuBnEem2jRNVIrIWpZST+KKdn7UvPG9m9TzpOM3Th7rkWilZy0Qek1XWl/A4pvCceHjM6Q5xEE+qiy8WglhIemEPqKcbl0BIhjiYiwzB3lmrPyvECuJkPA4hKW1g+iSFZ1uILujOOmu90v4BjcNYLmN6zGqqC8tl4ZfLU0JdwdrHKtqQ0+NzyOzXENStxbPunHeiP1cPOUgWRiPA+pA9SRj7Fy3Ubf/V4hjhXW60KxArcpDbgzevhV0b/TzAUGMjrfpq8Ah0UL5chN/QC7Gh9N8b9WSs/ZF1Z7C5UEWbk9yLAPnvbHRuYpPqC/OkJtrfR7vTUVUWEhn3YfYrLsmMLN/aJz0NbiDRlW1Hx4c7ZZely4oyFiBl05XRiGu7Kyct9aUfx2wGRAE8+KOabhboAmSPZD1QFKb8xSlzX/wLN7leBRo6xy67eKhFSw++404iAfi5jdZ3YbmEw8LbbobSBaXYbN2mEEHJpbWZoWXuaoC6KQtOs7nhcdIxXKAwcVXoF2kn+hpYgeoAolrHWASv/OSG+xikdzwxuW5pwAiEOtWFEs+NQqRKhVUwcUbA4KzVrR94EF2kWS0tkgyd5fOBo6junAQJNQ58D4F67h4FV8IeOOnVrRdgUPOnpIUHq8VyVo4P7BdlaQ1jTowpQ1coSKz36aSQhjmyLUDAX83p8gzrwrjrPopSFp4m+9QP+33vm7cHXj+Mt7Lei25KXkA8sFw8BvEIv1NmIUH0NrivAFUh0V/SRMNJKxGQMVViwARkKgWvwpYWSRQ0eA0SSoG6oMxAzBcyu2hGJqrwOpglCffHsuRVnxibAz8OEPMFFcwDWanHG+do6LKXqYKnskdwDnb1A9Wb1PYpqApjFVsBke24UTxSIu3grzsEMcEvyTiKtBTvfhfzYdbKbqtAkKrsLBXEYd/JQRSnAjOPBzmwN1ovQ8jZ57bJYKsK4h9KKvnOzOOBoSRdhwLOH2I/i0AiCX8NihqHXsBfcPlIH5rqB0vxcjHm/PwAmHz4j8+lOeYOSOCvdjN6EUircjdBKtpb85KlWowSF60nrtLakF0iZs9s8hesVlEJ0XSUhM6CLN/G35dxogBMOOCVqz1gNIA/yV0B2cBtgNg7vZlbCCh2x7q5vLzJAIJkkrzpXaeCLsdWLBweiSPXmC4A7DS/bUnmcBo3pEVOIeBZ5OwpAchzznlKxdM3rsPBTIBj5+Q4IGXtYSFTGfntaT4LLTVG4xrQuYd/VizkGrXhDN4AU8sYHV1A8d3bVQiekw03KXYLkITMGJMCbqtfbSukXn+2Q2DdAdUi3+DBY3+5wQEtlpuQgEPA3HS2aCzcRTfRhDl8Cxv9Ay8Tm1YEFPRmgjovGqgAQM4fuJ4KdN/twCEPd+uO4QUwwYOJQ0Cb6irk0dYyK2qpHcAvxyS4IFO4vgLkrm0RzcoD8EgeWRIAXnIrC4GL1db+/hExM0tA5XdVfdADWHdzS3PkZ8HjQYV1d1efFcyDb+8dVHn9deIQ89Dlf3UEwZKDPcOv1ASg2RkiZQFsP3LViNCtVX9PXmMAKcPg44K8anP17YIgAI90rAeAn9rrKhQVvmlZEBJr7jUI5QDTsw7x4zrJqyCEXsCWcq0fAAphbemiDKNbDB04aVtK468Aq2Xr9sWpILdsMmBlu+xl6xzglFiSeZyN8rtVgSnU6hssgblrV86Cd9Y9NAaM0TaLLXg5l81qiYkzd697ngFvWn33Llgti5Motk57OBfzBMJZYXklAHLLXCcSV4s/kg7ycf42c1O0WqZ8i2r5mDOd8x+31/9wAWAQZlyeLJDMq7785w27c0oTz7IpqqJL5tsC5vZ39hbw0+k7niQXN8Nqq7zHq91yC/BszXSzIJYUW6HStLy6bLdOzJ+jVy0uNJT2VMB1fPnUp3bzrTwXUjd4e8tM2nZX5LjA1q7qBiAXAAHFY+wrQVrt+ANRsQIPYZsvKFbpfqOFE6EpgGxsYf7DHbKLJ0yxpxJ1gFue9wrRasF2FdoVtBcZcDq9PkCNgtCJ1wp7iTcGJIS3WHDZ9ZOAOMqXAZiRbcxF+kFPTgN0sSjKIQXSkb2crioYX9ujtVZY81bRkM8FVBucleCjLDcZpomxlphXB5atdd4qZE9AL3Q7s0YYpNZILeUdZiS1knJZXw+6VpdA8IstJBEFvV3KcVqlWlOGVIW1YK0aoJbKaUcdyVDX74JocOuMRdQVwnXJDbooq2U5XMicdu4ARlU+3GXvboHLm93LXXQZYpv0IrYP9+5/EisVhy1EmYFTFszv3tEAjg45bejLh67Q66OSqsoX/KutWC6x1wd/2xgSQq5E83lEX2ynVllAVLhus+mVZIQhrRdFtIEn/PaxybzLp9osOrp3ngIRYWqqJ7VHtVis2DdHNGZ5TapQyJqQtMqsRh0+QCaZzJrl8PJ8WavMyn0n5P3mT+/bpgiwbiy5bP6pDi9mIGtFOd0ng75XLwYzIsnxPsAKBfxjuQoG1GTsa1irC+RbvcGor7i5uNdpE7GrU6yyxTErQs1FgqHFdR6VI6udEFre6FEh1o1IZhyW9ohtArJGrNUF8aHutSjBIW1USnHMnGzHilXzOs9JbuuoHV+dOpi7AuL9qXz0lWKRNnSpfhAMtzu+vDs7nEd+YwS7HEE0TLYayQUusE3n9W+q/wE+RZVFfqy4uwAAAABJRU5ErkJggg=="
+                  alt=""
+                />
+                <span className="temperature">63</span>
+                <span className="weatherState">Cloudy</span>
+                <div className="otherDetails">
+                  <span>humidity</span>
+                  <p>45%</p>
+                  <span>Wind Speed</span>
+                  <p>20 km/j</p>
+                </div>
+              </div>
+            </div>
+            <div className="appWrapperRight">
+              <div className="weatherTemperature"></div>
+              <div class="weatherForecasting">
+                <span class="weatherTime">Today</span>
+                <span class="weatherCondition">
+                  <img
+                    height="30px"
+                    src="https://uxwing.com/wp-content/themes/uxwing/download/weather/clouds-icon.png"
+                    alt=""
+                  />
+                </span>
+                <span class="weatherHumidityState">Humidity</span>
+                <p>30%</p>
+              </div>
+            </div>
           </div>
         );
       };
